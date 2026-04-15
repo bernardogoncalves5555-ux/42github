@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beduarte <berduarte@student.42lisboa.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/14 17:28:16 by beduarte          #+#    #+#             */
-/*   Updated: 2026/04/15 13:46:50 by beduarte         ###   ########.fr       */
+/*   Created: 2026/04/15 14:48:00 by beduarte          #+#    #+#             */
+/*   Updated: 2026/04/15 15:15:28 by beduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t			i;
-	unsigned char	*p1;
-	unsigned char	*p2;
+	size_t			j;
+	size_t			total_len;
 
-	i = 0;
-	p1 = (unsigned char *)dest;
-	p2 = (unsigned char *)src;
-	while (i < n)
+	total_len = ft_strlen(dest) + ft_strlen(src);
+	i = ft_strlen(dest);
+	j = 0;
+	if (size <= ft_strlen(dest))
+		return (total_len);
+	while (i < size - 1 && src[j] != '\0')
 	{
-		p1[i] = p2[i];
+		dest[i] = src[j];
 		i++;
+		j++;
 	}
-	return (dest);
+	dest[i] = '\0';
+	return (total_len);
 }
