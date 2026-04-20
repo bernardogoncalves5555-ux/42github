@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beduarte <beduarte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/15 14:48:00 by beduarte          #+#    #+#             */
-/*   Updated: 2026/04/17 14:53:13 by beduarte         ###   ########.fr       */
+/*   Created: 2026/04/20 14:33:33 by beduarte          #+#    #+#             */
+/*   Updated: 2026/04/20 16:09:41 by beduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+char	*ft_strdup(const char *s)
 {
-	size_t	i;
-	size_t	j;
-	size_t	total_len;
+	size_t len;
+	char *dup;
 
-	total_len = ft_strlen(dest) + ft_strlen(src);
-	i = ft_strlen(dest);
-	j = 0;
-	if (size <= ft_strlen(dest))
-		return (total_len);
-	while (i < size - 1 && src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (total_len);
+	len = ft_strlen(s) + 1;
+	dup = malloc(len);
+	if (!dup)
+		return (NULL);
+	ft_memcpy(dup, s, len);
+	return (dup);
 }
