@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beduarte <beduarte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/15 16:16:21 by beduarte          #+#    #+#             */
-/*   Updated: 2026/04/21 13:28:46 by beduarte         ###   ########.fr       */
+/*   Created: 2026/04/21 16:06:31 by beduarte          #+#    #+#             */
+/*   Updated: 2026/04/21 16:35:12 by beduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+static int  ft_wordcount(const char *s, char c)
 {
-	size_t i;
-	unsigned char *p;
+    size_t  i;
+    size_t  count;
 
-	i = 0;
-	p = (unsigned char *)s;
-	while (i < n)
-	{
-		if (p[i] == (unsigned char)c)
-			return ((void *)&p[i]);
-		i++;
-	}
-	return (0);
+    i = 0;
+    count = 0;
+    while(s[i] != '\0')
+    {
+        if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
+            count++;
+        i++;
+    }
+    return (count);
+}
+
+static char *ft_getword(const char *s, char c, size_t start)
+{
+    while (start != c && start != '\0')
+    
+}
+
+char    **ft_split(const char *s, char c)
+{
+    
 }

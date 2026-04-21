@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beduarte <beduarte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/15 16:16:21 by beduarte          #+#    #+#             */
-/*   Updated: 2026/04/21 13:28:46 by beduarte         ###   ########.fr       */
+/*   Created: 2026/04/21 12:50:21 by beduarte          #+#    #+#             */
+/*   Updated: 2026/04/21 13:05:27 by beduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t i;
-	unsigned char *p;
+	char	*result;
+	size_t	len;
 
-	i = 0;
-	p = (unsigned char *)s;
-	while (i < n)
-	{
-		if (p[i] == (unsigned char)c)
-			return ((void *)&p[i]);
-		i++;
-	}
-	return (0);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	result = malloc(len + 1);
+	if (!result)
+		return (NULL);
+	result[0] = '\0';
+	ft_strcat(result, s1);
+	ft_strcat(result, s2);
+	return (result);
 }
