@@ -6,7 +6,7 @@
 /*   By: beduarte <beduarte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 16:56:43 by beduarte          #+#    #+#             */
-/*   Updated: 2026/05/05 17:08:14 by beduarte         ###   ########.fr       */
+/*   Updated: 2026/05/06 16:31:41 by beduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ static int	print_hex_pointer(uintptr_t nbr)
 
 int	print_pointer(void *p)
 {
-	int len;
-	uintptr_t nbr;
+	int			len;
+	uintptr_t	nbr;
 
 	len = 0;
 	if (!p)

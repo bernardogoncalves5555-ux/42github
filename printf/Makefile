@@ -6,13 +6,13 @@
 #    By: beduarte <beduarte@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/05 15:50:30 by beduarte          #+#    #+#              #
-#    Updated: 2026/05/05 15:50:33 by beduarte         ###   ########.fr        #
+#    Updated: 2026/05/06 16:00:26 by beduarte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME    = libftprintf.a
 CC      = gcc
-CFLAGS  = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I./libft
 
 LIBFT_DIR   = libft
 LIBFT       = $(LIBFT_DIR)/libft.a
